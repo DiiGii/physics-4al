@@ -5,7 +5,9 @@ Github for physics 4al notebook code
 # Import statements
 import numpy as np
 import matplotlib.pyplot as plt
+```
 
+```python
 # Load in data
 control1 = np.loadtxt('baby_oil4.txt', delimiter=';')
 time = control1[:,0]
@@ -23,7 +25,8 @@ plt.ylabel('Displacement (m)')
 # Label the x-axis
 plt.xlabel('Time (s)')
 plt.show()
-
+```
+```python
 # Create a variable that starts from 0 and ends at the size of the array
 array_index=np.arange(0,len(ultrasound))
 # Plot the distance vs array index
@@ -32,8 +35,6 @@ plt.scatter(array_index, ultrasound)
 plt.xlabel('Array index')
 plt.ylabel('Distance (m)')
 ```
-
---- 
 
 ```python
 # Get lower and upper index
@@ -56,9 +57,9 @@ plt.plot(time_window, dist_window)
 # Add axes labels
 plt.xlabel('Time (s)')
 plt.ylabel('Distance (m)')
+```
 
----
-
+```python
 coeff_quad = np.polyfit(time_window, dist_window, 2)
 y_fit=coeff_quad[0]*time_window**2+coeff_quad[1]*time_window+coeff_quad[2]
 
@@ -75,8 +76,6 @@ plt.ylabel('Distance (m)')
 plt.title('Fitted Distance (m) vs Time (s)')
 print('Acceleration is ' + str(coeff_quad[0] * 2) + ' meters per second squared')
 ```
-
----
 
 ```python
 coeff_quad, cov_quad = np.polyfit(time_window, dist_window, 2, cov=True)
