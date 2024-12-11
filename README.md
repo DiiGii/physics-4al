@@ -31,9 +31,11 @@ plt.scatter(array_index, ultrasound)
 # Add axes labels
 plt.xlabel('Array index')
 plt.ylabel('Distance (m)')
+```
 
 --- 
 
+```python
 # Get lower and upper index
 
 lower_index = 0
@@ -72,9 +74,11 @@ plt.ylabel('Distance (m)')
 #Title 
 plt.title('Fitted Distance (m) vs Time (s)')
 print('Acceleration is ' + str(coeff_quad[0] * 2) + ' meters per second squared')
+```
 
 ---
 
+```python
 coeff_quad, cov_quad = np.polyfit(time_window, dist_window, 2, cov=True)
 
 # Error in quadratic coefficient
@@ -85,3 +89,4 @@ accel_err = 2 * quad_err
 print("error:")
 print(accel_err)
 ```
+
