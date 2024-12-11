@@ -56,6 +56,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Distance (m)')
 
 ---
+
 coeff_quad = np.polyfit(time_window, dist_window, 2)
 y_fit=coeff_quad[0]*time_window**2+coeff_quad[1]*time_window+coeff_quad[2]
 
@@ -73,6 +74,7 @@ plt.title('Fitted Distance (m) vs Time (s)')
 print('Acceleration is ' + str(coeff_quad[0] * 2) + ' meters per second squared')
 
 ---
+
 coeff_quad, cov_quad = np.polyfit(time_window, dist_window, 2, cov=True)
 
 # Error in quadratic coefficient
